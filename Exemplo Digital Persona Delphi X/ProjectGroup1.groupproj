@@ -1,0 +1,84 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{2B2AF178-31FF-47F3-809B-5BB93BEC46D1}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="DigitalPersonaDelphiExemplo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Componente Digital Persona\Persona.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Componente Digital Persona\PersonaDev.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Componente Digital Persona\PersonaEng.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Componente Digital Persona\PersonaShx.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DigitalPersonaDelphiExemplo">
+        <MSBuild Projects="DigitalPersonaDelphiExemplo.dproj"/>
+    </Target>
+    <Target Name="DigitalPersonaDelphiExemplo:Clean">
+        <MSBuild Projects="DigitalPersonaDelphiExemplo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DigitalPersonaDelphiExemplo:Make">
+        <MSBuild Projects="DigitalPersonaDelphiExemplo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Persona">
+        <MSBuild Projects="..\..\Componente Digital Persona\Persona.dproj"/>
+    </Target>
+    <Target Name="Persona:Clean">
+        <MSBuild Projects="..\..\Componente Digital Persona\Persona.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Persona:Make">
+        <MSBuild Projects="..\..\Componente Digital Persona\Persona.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PersonaDev">
+        <MSBuild Projects="..\..\Componente Digital Persona\PersonaDev.dproj"/>
+    </Target>
+    <Target Name="PersonaDev:Clean">
+        <MSBuild Projects="..\..\Componente Digital Persona\PersonaDev.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PersonaDev:Make">
+        <MSBuild Projects="..\..\Componente Digital Persona\PersonaDev.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PersonaEng">
+        <MSBuild Projects="..\..\Componente Digital Persona\PersonaEng.dproj"/>
+    </Target>
+    <Target Name="PersonaEng:Clean">
+        <MSBuild Projects="..\..\Componente Digital Persona\PersonaEng.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PersonaEng:Make">
+        <MSBuild Projects="..\..\Componente Digital Persona\PersonaEng.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PersonaShx">
+        <MSBuild Projects="..\..\Componente Digital Persona\PersonaShx.dproj"/>
+    </Target>
+    <Target Name="PersonaShx:Clean">
+        <MSBuild Projects="..\..\Componente Digital Persona\PersonaShx.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PersonaShx:Make">
+        <MSBuild Projects="..\..\Componente Digital Persona\PersonaShx.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DigitalPersonaDelphiExemplo;Persona;PersonaDev;PersonaEng;PersonaShx"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DigitalPersonaDelphiExemplo:Clean;Persona:Clean;PersonaDev:Clean;PersonaEng:Clean;PersonaShx:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DigitalPersonaDelphiExemplo:Make;Persona:Make;PersonaDev:Make;PersonaEng:Make;PersonaShx:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
